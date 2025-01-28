@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart City Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css">
+</head>
+<body>
+    <header>
+        <h1>Smart City Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#infrastructure">Infrastructure</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#citizen-engagement">Citizen Engagement</a></li>
+            </ul>
+        </nav>
+        <div id="user-profile">
+            <img src="images.png" alt="User Avatar">
+            <span>Admin</span>
+        </div>
+        <div id="notifications">
+            <button id="notif-toggle">🔔</button>
+            <div id="notif-panel" class="hidden">
+                <h3>Notifications</h3>
+                <ul id="notif-list"></ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="overview">
+            <h2>City Overview</h2>
+            <div id="map"></div>
+            <div id="key-metrics">
+                <div class="metric">
+                    <h3>Population</h3>
+                    <p id="population">Loading...</p>
+                </div>
+                <div class="metric">
+                    <h3>Air Quality Index</h3>
+                    <p id="air-quality">Loading...</p>
+                </div>
+                <div class="metric">
+                    <h3>Traffic Flow</h3>
+                    <p id="traffic-flow">Loading...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="real-time">
+            <h2>Real-Time Information</h2>
+            <div class="grid-container">
+                <div id="weather-widget" class="widget">
+                    <h3>Weather</h3>
+                    <div id="weather-info"></div>
+                </div>
+                <div id="transport-tracker" class="widget">
+                    <h3>Public Transport</h3>
+                    <div id="transport-info"></div>
+                </div>
+                <div id="pollution-monitor" class="widget">
+                    <h3>Pollution Levels</h3>
+                    <div id="pollution-info"></div>
+                </div>
+                <div id="smart-parking" class="widget">
+                    <h3>Smart Parking</h3>
+                    <div id="parking-info"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="infrastructure">
+            <h2>Infrastructure</h2>
+            <div class="grid-container">
+                <div class="chart">
+                    <h3>Energy Consumption</h3>
+                    <canvas id="energy-chart"></canvas>
+                </div>
+                <div class="chart">
+                    <h3>Water Usage</h3>
+                    <canvas id="water-chart"></canvas>
+                </div>
+                <div id="energy-heatmap" class="widget">
+                    <h3>Energy Consumption Heatmap</h3>
+                    <div id="heatmap"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services">
+            <h2>City Services</h2>
+            <div id="services-grid">
+                <div class="service-card">
+                    <h3>Public Transportation</h3>
+                    <p id="transport-status">Loading...</p>
+                </div>
+                <div class="service-card">
+                    <h3>Waste Management</h3>
+                    <p id="waste-status">Loading...</p>
+                </div>
+                <div class="service-card">
+                    <h3>Emergency Services</h3>
+                    <p id="emergency-status">Loading...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="analytics">
+            <h2>City Analytics</h2>
+            <div id="analytics-charts">
+                <div class="chart">
+                    <h3>City Budget Allocation</h3>
+                    <canvas id="budget-chart"></canvas>
+                </div>
+                <div class="chart">
+                    <h3>Citizen Satisfaction</h3>
+                    <canvas id="satisfaction-chart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="citizen-engagement">
+            <h2>Citizen Engagement</h2>
+            <div class="grid-container">
+                <div id="feedback-system" class="widget">
+                    <h3>Citizen Feedback</h3>
+                    <form id="feedback-form">
+                        <textarea id="feedback-text" placeholder="Share your thoughts or suggestions..."></textarea>
+                        <button type="submit">Submit Feedback</button>
+                    </form>
+                    <div id="feedback-list"></div>
+                </div>
+                <div id="city-events" class="widget">
+                    <h3>City Events Calendar</h3>
+                    <div id="calendar"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Smart City Dashboard. All rights reserved.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/heatmap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
+
